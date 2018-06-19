@@ -31,6 +31,15 @@ $(document).ready(function() {
 
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+    
+    var previousDancer = undefined;
+    dancer.$node.on('mouseover', function(event) {
+      var middleTop = $('body').height()*0.5;
+      var middleLeft = $('body').width() * 0.5;
+      dancer.setPosition(middleTop, middleLeft);
+      setTimeout(function() {dancer.setPreviousPosition(this.prevTop, this.prevLeft)}, 3000);
+    })
+    
   });
   $('.makeDancerLineUpH').on('click', function(event) {
     var base = $('body').width() * 0.1;
@@ -61,34 +70,6 @@ $(document).ready(function() {
   });
 
   $('.makeGroups').on('click', function(event) {
-    console.log('Making groups');
-    // var groups = 4;
-    // var displacementArray = [];
-    // for (var i = 0; i < window.dancers.length; i++) {
-    //   dancerIArr = [];
-    //   for (var j = 0; j < window.dancers.length; j++) {
-    //     var dancerATop = window.dancers[i].top;
-    //     var dancerALeft = window.dancers[i].left;
-    //     var dancerBTop = window.dancer[j].top;
-    //     var dancerBLeft = window.dancer[j].left;
-    //     var distance = Math.sqrt((dancerATop-dancerBTop)** 2 - (dancerALeft - dancerBLeft)**2);
-    //     dancerIArr.push(distance);
-    //   }
-    //   displacementArray.push(dancerIArr);
-    // }
-    
-    // var NumClosestNeighbors = Math.floor(window.dancers.length/groups);
-    // var closestNArray = [];  
-    
-    
-    // for (var i = 0; i < displacementArray.length; i++) {
-    //   for(var j = 0; j<NumClosestNeighbors; j++){
-                
-
-    //   }
-    //   var row = displacementArray[i];
-    //   var minimum = Math.min(displacementArray)
-    // }
     var firstElement = window.dancers[0];
     var firstElementTop = firstElement.top;
     var firstElementLeft = firstElement.left;
@@ -114,6 +95,7 @@ $(document).ready(function() {
     console.log(secondGroup);
     
   });
+  
   
 
 

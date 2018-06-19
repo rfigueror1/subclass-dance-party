@@ -1,7 +1,7 @@
 var makeDoveDancer = function(top, left, timeBetweenSteps) {
   this.oldStep = makeDancer.prototype.step;
   makeDancer.call(this, top, left);
-  this.$node.prepend('<img id="Dove" src="https://res.cloudinary.com/sagacity/image/upload/c_crop,h_408,w_408,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_640/sweiler_TD_25gif2_lmutyv.gif" />');
+  this.$node.prepend('<img class="Dove dancers" src="https://res.cloudinary.com/sagacity/image/upload/c_crop,h_408,w_408,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_640/sweiler_TD_25gif2_lmutyv.gif" />');
 };
 
 makeDoveDancer.prototype = Object.create(makeDancer.prototype);
