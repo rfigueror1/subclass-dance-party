@@ -32,5 +32,90 @@ $(document).ready(function() {
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
+  $('.makeDancerLineUpH').on('click', function(event) {
+    var base = $('body').width() * 0.1;
+    var distance = ($('body').width() * 0.9) / window.dancers.length;
+    var height;
+    for (var i = 0; i < window.dancers.length; i++) {
+      height = $('body').height() * 0.7;
+      var alignment = base + distance * i;
+      if(i % 2 === 0){
+        height = $('body').height() * 0.2;
+      }
+      window.dancers[i].setPosition(height, alignment);
+    }
+  });
+  
+  $('.makeDancerLineUpV').on('click', function(event) {
+    var base = $('body').width() * 0.1;
+    var distance = ($('body').width() * 0.9) / window.dancers.length;
+    var width;
+    for (var i = 0; i < window.dancers.length; i++) {
+      width = $('body').width() * 0.5;
+      var alignment = base + distance * i;
+      if(i % 2 === 0){
+        width = $('body').width() * 0.3;
+      }
+      window.dancers[i].setPosition(alignment, width);
+    }
+  });
+
+  $('.makeGroups').on('click', function(event) {
+    console.log('Making groups');
+    // var groups = 4;
+    // var displacementArray = [];
+    // for (var i = 0; i < window.dancers.length; i++) {
+    //   dancerIArr = [];
+    //   for (var j = 0; j < window.dancers.length; j++) {
+    //     var dancerATop = window.dancers[i].top;
+    //     var dancerALeft = window.dancers[i].left;
+    //     var dancerBTop = window.dancer[j].top;
+    //     var dancerBLeft = window.dancer[j].left;
+    //     var distance = Math.sqrt((dancerATop-dancerBTop)** 2 - (dancerALeft - dancerBLeft)**2);
+    //     dancerIArr.push(distance);
+    //   }
+    //   displacementArray.push(dancerIArr);
+    // }
+    
+    // var NumClosestNeighbors = Math.floor(window.dancers.length/groups);
+    // var closestNArray = [];  
+    
+    
+    // for (var i = 0; i < displacementArray.length; i++) {
+    //   for(var j = 0; j<NumClosestNeighbors; j++){
+                
+
+    //   }
+    //   var row = displacementArray[i];
+    //   var minimum = Math.min(displacementArray)
+    // }
+    var firstElement = window.dancers[0];
+    var firstElementTop = firstElement.top;
+    var firstElementLeft = firstElement.left;
+    var distance;
+    var firstGroup = [];
+    var secondGroup = [];
+    firstGroup.push(firstElement);
+    for(var i = 1; i < window.dancers.length; i++){
+      distance = Math.sqrt((firstElementTop-window.dancers[i].top)** 2 - (firstElementLeft - window.dancers[i].left)**2);
+      if(distance < 500){
+        firstGroup.push(window.dancers[i]);
+      } else{
+        secondGroup.push(window.dancers[i]);
+      }
+    }
+    for (var i = 0; i < firstGroup.length; i++) {
+      firstGroup[i].setPosition($('body').height() * 0.5 + i * 50, $('body').width() * 0.2);
+    }
+    for (var i = 0; i < secondGroup.length; i++) {
+      secondGroup[i].setPosition($('body').height() * 0.5 + i * 50, $('body').width() * 0.8);
+    }
+    console.log(firstGroup);
+    console.log(secondGroup);
+    
+  });
+  
+
+
 });
 

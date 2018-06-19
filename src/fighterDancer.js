@@ -9,11 +9,12 @@ makeNinjaDancer.prototype.constructor = makeNinjaDancer;
 
 makeNinjaDancer.prototype.step = function() {
   this.oldStep();
-
-  this.$node.fadeIn(700);
   // this.$node.css({'transform': 'rotate(-180deg)'});
   this.$node.fadeIn(700);
-  this.$node.css({top: ($('body').width() * Math.abs(Math.random() - 0.20)), left: ($('body').width() * Math.abs(Math.random() - 0.1)), position: 'absolute'});
+  // this.$node.animate({ 
+  //       left: "+=500px",
+  //     }, 1000);
   this.$node.fadeOut(700);
+
 };
 
