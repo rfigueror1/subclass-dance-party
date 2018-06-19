@@ -22,21 +22,18 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
-  /*border:10px solid blue;
-  height: auto; 
-  width: auto; 
-  max-width: 300px; 
-  max-height: 300px;
-  border-radius:10px; */ 
-  position:absolute;
+.blinky{
+  border:10px solid blue;
+  border-radius:50%;  
 }
 
+.dancer {
+  position:absolute;
+}
 .Ninja {
   border: none;
   height: 200px;
   width: auto;
-
 }
 
 .Dove {
@@ -44,3 +41,32 @@ body, a:link, a:visited, a:active{
   height: 200px;
   width: auto;
 }
+
+/*.btn {
+  background: #49f21f;
+  background-image: -webkit-linear-gradient(top, #49f21f, #9e9ee3);
+  background-image: -moz-linear-gradient(top, #49f21f, #9e9ee3);
+  background-image: -ms-linear-gradient(top, #49f21f, #9e9ee3);
+  background-image: -o-linear-gradient(top, #49f21f, #9e9ee3);
+  background-image: linear-gradient(to bottom, #49f21f, #9e9ee3);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Georgia;
+  color: #0d020d;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #50f01a;
+  background-image: -webkit-linear-gradient(top, #50f01a, #3498db);
+  background-image: -moz-linear-gradient(top, #50f01a, #3498db);
+  background-image: -ms-linear-gradient(top, #50f01a, #3498db);
+  background-image: -o-linear-gradient(top, #50f01a, #3498db);
+  background-image: linear-gradient(to bottom, #50f01a, #3498db);
+  text-decoration: none;
+}*/
+
+

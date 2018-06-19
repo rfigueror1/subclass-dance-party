@@ -42,7 +42,7 @@ $(document).ready(function() {
     
   });
   $('.makeDancerLineUpH').on('click', function(event) {
-    var base = $('body').width() * 0.1;
+    var base = $('body').width() * 0.05;
     var distance = ($('body').width() * 0.9) / window.dancers.length;
     var height;
     for (var i = 0; i < window.dancers.length; i++) {
@@ -56,14 +56,14 @@ $(document).ready(function() {
   });
   
   $('.makeDancerLineUpV').on('click', function(event) {
-    var base = $('body').width() * 0.1;
+    var base = $('body').width() * 0.05;
     var distance = ($('body').width() * 0.9) / window.dancers.length;
     var width;
     for (var i = 0; i < window.dancers.length; i++) {
-      width = $('body').width() * 0.5;
+      width = $('body').width() * 0.8;
       var alignment = base + distance * i;
       if(i % 2 === 0){
-        width = $('body').width() * 0.3;
+        width = $('body').width() * 0.2;
       }
       window.dancers[i].setPosition(alignment, width);
     }
