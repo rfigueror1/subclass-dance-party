@@ -10,6 +10,15 @@ makeDoveDancer.prototype.constructor = makeDoveDancer;
 makeDoveDancer.prototype.step = function() {
   this.oldStep();
   this.$node.show();
+  this.$node.animate({  borderSpacing: -360 }, {
+    step: function(now,fx) {
+        $(this).css('-webkit-transform','rotate('+now+'deg)'); 
+        $(this).css('-moz-transform','rotate('+now+'deg)');
+        $(this).css('transform','rotate('+now+'deg)');
+      },
+      duration:'slow'
+    },'linear');
+  // this.$node.flip();
   // this.$node.fadeIn(700);
   // // this.$node.css({'transform': 'rotate(-180deg)'});
   // this.$node.fadeIn(700);

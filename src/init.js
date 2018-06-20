@@ -33,12 +33,18 @@ $(document).ready(function() {
     $('body').append(dancer.$node);
     
     var previousDancer = undefined;
-    dancer.$node.on('mouseover', function(event) {
+    dancer.$node.on('click', function(event) {
       var middleTop = $('body').height()*0.5;
       var middleLeft = $('body').width() * 0.5;
       dancer.setPosition(middleTop, middleLeft);
-      setTimeout(function() {dancer.setPreviousPosition(this.prevTop, this.prevLeft)}, 3000);
-    })
+      setTimeout(function() {dancer.setPreviousPosition(this.prevTop, this.prevLeft)}, 1000);
+    });
+    
+    dancer.$node.on('mousedown', function(){
+      $(this).addClass('flipped');
+    }).mouseup(function(){
+      $(this).removeClass('flipped');
+    });
     
   });
   $('.makeDancerLineUpH').on('click', function(event) {
@@ -79,7 +85,7 @@ $(document).ready(function() {
     firstGroup.push(firstElement);
     for(var i = 1; i < window.dancers.length; i++){
       distance = Math.sqrt((firstElementTop-window.dancers[i].top)** 2 - (firstElementLeft - window.dancers[i].left)**2);
-      if(distance < 500){
+      if(distance < 1100){
         firstGroup.push(window.dancers[i]);
       } else{
         secondGroup.push(window.dancers[i]);
@@ -95,7 +101,6 @@ $(document).ready(function() {
     console.log(secondGroup);
     
   });
-  
   
 
 
